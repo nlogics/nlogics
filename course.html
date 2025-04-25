@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Courses</title>
+</head>
+<body>
+    <!-- <h1>basic test</h1> -->
+
+    <div id="header"></div>
+
+    <script>
+        // Function to import components 
+         function loadComponent(filePath, elementId) {
+          fetch(filePath)
+              .then(response => response.text())
+              .then(html => {
+                  document.getElementById(elementId).innerHTML = html;
+              })
+              .catch(err => console.error(`Error loading ${filePath}:`, err));
+      }
+  
+      // Loading individual components
+      loadComponent('homeComponents/header.html', 'header');
+      </script>
+</body>
+</html>

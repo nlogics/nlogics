@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"  rel="stylesheet" />
+    <link rel="icon" href="./coreFiles/cube.png" type="image/png" />
+    <title>About</title>
+</head>
+<body>
+    <!-- <h1>test done</h1> -->
+    <div id="there"></div>
+    <div id="header"></div>
+    <div id="content"></div>
+    <div id="status"></div>
+    <div id="placements"></div>
+    <div id="contact"></div>
+    <div id="footer"></div>
+
+    <script>
+        // Function to import components 
+         function loadComponent(filePath, elementId) {
+          fetch(filePath)
+              .then(response => response.text())
+              .then(html => {
+                  document.getElementById(elementId).innerHTML = html;
+              })
+              .catch(err => console.error(`Error loading ${filePath}:`, err));
+      }
+  
+      // Loadind individual components
+      loadComponent('homeComponents/header.html', 'header');
+      loadComponent('aboutComponents/status.html', 'status');
+      loadComponent('aboutComponents/placements.html', 'placements');
+      loadComponent('aboutComponents/content.html', 'content');
+      loadComponent('aboutComponents/contact.html', 'contact');
+      loadComponent('homeComponents/footer.html', 'footer');
+    </script>
+</body>
+</html>

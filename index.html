@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PPVRHHKN2M"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-PPVRHHKN2M');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"  rel="stylesheet" />
+    <link rel="icon" href="./coreFiles/cube.png" type="image/png" />
+    <title>Home</title>
+</head>
+
+<body>
+
+  <!-- <h1>hello</h1> -->
+ 
+    <!-- Header Section -->
+    <div id="header"></div>
+    <!-- <div id="Carousel"></div> -->
+    <div id="hero"></div>
+    <div id="content"></div>
+    <div id="footer"></div>
+    
+    <script>
+      // Function to import components 
+       function loadComponent(filePath, elementId) {
+        fetch(filePath)
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById(elementId).innerHTML = html;
+            })
+            .catch(err => console.error(`Error loading ${filePath}:`, err));
+    }
+
+    // Loadind individual components
+    loadComponent('./homeComponents/header.html', 'header');
+    // loadComponent('homeComponents/homeCarousel.html', 'Carousel');
+    loadComponent('homeComponents/hero.html', 'hero');
+    loadComponent('homeComponents/content.html', 'content');
+    loadComponent('homeComponents/footer.html', 'footer');
+
+    
+    </script>
+    <!-- // flowbite CDN 👇 -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <!-- Zoho form -->
+     <script
+      type="text/javascript">function zforms_open_window(url, height, width) { var leftPos = 0; var topPos = 0; if (screen) { leftPos = (screen.width - width) / 2; topPos = (screen.height - height) / 2; window.open(url, null, 'width=' + width + ',height=' + height + ',left=' + leftPos + ',top=' + topPos + ', toolbar=0, location=0, status=1, scrollbars=1, resizable=1'); } }</script>
+</body>
+</html>
